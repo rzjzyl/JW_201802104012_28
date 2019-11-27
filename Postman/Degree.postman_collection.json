@@ -1,0 +1,270 @@
+{
+	"info": {
+		"_postman_id": "fe2b43f8-9e43-41b4-95a8-0bbefef33f84",
+		"name": "Degree",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetAll localhost:8080/degree.ctl",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2df98d8a-d17c-422b-85b1-d4bb6a7e4ed7",
+						"exec": [
+							"pm.test(\"Body matches string学位名称\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"硕士\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"description\": \"xxxt\",\r\n        \"id\": 3,\r\n        \"no\": \"02\",\r\n        \"school\":{\r\n        \t\"id\":\"3\",\r\n        \t\"description\":\"管理学院\",\r\n        \t\"no\":\"02\",\r\n        \t\"remarks\":\"\"\r\n        }\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/degree.ctl?id=1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"degree.ctl"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get localhost:8080/degree.ctl",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d9477d56-ef06-4d63-9832-4f2f9763f3b7",
+						"exec": [
+							"pm.test(\"Body matches string学位名称\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"硕士\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"description\": \"xxxt\",\r\n        \"id\": 3,\r\n        \"no\": \"02\",\r\n        \"school\":{\r\n        \t\"id\":\"3\",\r\n        \t\"description\":\"管理学院\",\r\n        \t\"no\":\"02\",\r\n        \t\"remarks\":\"\"\r\n        }\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/degree.ctl",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"degree.ctl"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": " Add localhost:8080/degree.ctl",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a5623b16-88b5-410c-81c5-ec7f99cba256",
+						"exec": [
+							"pm.test(\"Post方法测试成功\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.response.to.have.body({\"message\":\"增加成功\"})",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"description\": \"博士\",\r\n        \"no\": \"02\",\r\n        \"school\":{\r\n        \t\"id\":\"3\",\r\n        \t\"description\":\"管理学院\",\r\n        \t\"no\":\"02\",\r\n        \t\"remarks\":\"\"\r\n        }\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/degree.ctl",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"degree.ctl"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete localhost:8080/degree.ctl",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "cafdf5c9-27dc-412f-9c86-b9dbe10552c1",
+						"exec": [
+							"pm.test(\"Body is correct Delete方法测试\", function () {",
+							"    pm.response.to.have.body({\"message\":\"删除成功\"});",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"description\": \"xxxt\",\r\n        \"id\": 3,\r\n        \"no\": \"02\",\r\n        \"school\":{\r\n        \t\"id\":\"3\",\r\n        \t\"description\":\"管理学院\",\r\n        \t\"no\":\"02\",\r\n        \t\"remarks\":\"\"\r\n        }\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/degree.ctl?id=5",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"degree.ctl"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put localhost:8080/degree.ctl",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "af0c6ab0-25e6-4c87-b0dc-8c3d476ea0e3",
+						"exec": [
+							"pm.test(\"Body is correctPut方法测试\", function () {",
+							"    pm.response.to.have.body({\"message\":\"修改成功\"});",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"description\": \"硕士\",\r\n        \"id\": 2,\r\n        \"no\": \"02\",\r\n        \"school\":{\r\n        \t\"id\":\"3\",\r\n        \t\"description\":\"管理学院\",\r\n        \t\"no\":\"02\",\r\n        \t\"remarks\":\"\"\r\n        }\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/degree.ctl",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"degree.ctl"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

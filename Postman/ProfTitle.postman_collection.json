@@ -1,0 +1,270 @@
+{
+	"info": {
+		"_postman_id": "36b2718a-2a35-43a6-a016-cdf234f5a1a0",
+		"name": "ProfTitle",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetAll localhost:8080/profTitle.ctl",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "fe0c45e4-38a3-4832-8712-24e2a3eaca9d",
+						"exec": [
+							"pm.test(\"Body matches string专业名称\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"副教授\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n    {\r\n        \"description\": \"生物学\",\r\n        \"id\": 2,\r\n        \"no\": \"03\",\r\n        \"school\": {\r\n            \"description\": \"管理学院\",\r\n            \"id\": 3,\r\n            \"no\": \"02\"\r\n        }\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/profTitle.ctl",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"profTitle.ctl"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get localhost:8080/profTitle.ctl",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7362510c-4bd2-40bc-84f0-f91f0bcbc07c",
+						"exec": [
+							"pm.test(\"Body matches string专业名称\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"副教授\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n    {\r\n        \"description\": \"生物学\",\r\n        \"id\": 2,\r\n        \"no\": \"03\",\r\n        \"school\": {\r\n            \"description\": \"管理学院\",\r\n            \"id\": 3,\r\n            \"no\": \"02\"\r\n        }\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/profTitle.ctl?id=1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"profTitle.ctl"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add localhost:8080/profTitle.ctl",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "74340d9e-56ab-44ca-9b96-9107c0ed2fa5",
+						"exec": [
+							"pm.test(\"Post方法测试成功\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.response.to.have.body({\"message\":\"增加成功\"})",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"description\": \"教授\",\r\n    \"id\": 1,\r\n    \"no\": \"02\",\r\n    \"remarks\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/profTitle.ctl",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"profTitle.ctl"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete localhost:8080/profTitle.ctl",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "213b4150-0126-4a48-badd-b862a75dd959",
+						"exec": [
+							"pm.test(\"Body is correct Delete方法测试\", function () {",
+							"    pm.response.to.have.body({\"message\":\"删除成功\"});",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"description\": \"教授\",\r\n    \"id\": 2,\r\n    \"no\": \"02\",\r\n    \"remarks\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/profTitle.ctl?id=3",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"profTitle.ctl"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put localhost:8080/profTitle.ctl",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "826a5caa-7fbf-4f89-be2e-73420f0e9a6a",
+						"exec": [
+							"pm.test(\"Body is correctPut方法测试\", function () {",
+							"    pm.response.to.have.body({\"message\":\"修改成功\"});",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n        \"description\": \"副教授\",\r\n        \"id\": 1,\r\n        \"no\": \"01\",\r\n        \"remarks\": \"best\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/proftitle.ctl",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"proftitle.ctl"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

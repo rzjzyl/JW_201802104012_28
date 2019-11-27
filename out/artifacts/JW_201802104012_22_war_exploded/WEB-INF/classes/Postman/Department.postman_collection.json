@@ -1,0 +1,271 @@
+{
+	"info": {
+		"_postman_id": "13b923b1-c27a-4521-81e7-5973db0e7c76",
+		"name": "Department",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetAll localhost:8080/department.ctl",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "52293203-b144-4eba-a811-9de234540028",
+						"exec": [
+							"pm.test(\"Body matches string专业名称\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"信息管理\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"description\": \"外国语学院\",\r\n        \"id\": 1,\r\n        \"no\": \"03\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/department.ctl",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"department.ctl"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get localhost:8080/department.ctl",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7be5d263-0658-4780-827a-5dcd47bae516",
+						"exec": [
+							"pm.test(\"Body matches string专业名称\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"工程管理\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"description\": \"外国语学院\",\r\n        \"id\": 1,\r\n        \"no\": \"03\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/department.ctl?id=4",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"department.ctl"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add localhost:8080/department.ctl",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "13bdfae0-59b6-44e6-88b2-9d78142858d7",
+						"exec": [
+							"pm.test(\"Post方法测试成功\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.response.to.have.body({\"message\":\"增加成功\"})",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n    {\r\n        \"description\": \"管理学院\",\r\n        \"no\": \"02\",\r\n        \"school\": {\r\n            \"description\": \"管理学院\",\r\n            \"id\": 3,\r\n            \"no\": \"02\"\r\n        }\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/department.ctl",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"department.ctl"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete localhost:8080/department.ctl",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a29ab749-d392-45b0-8215-1ef63d3df97c",
+						"exec": [
+							"",
+							"pm.test(\"Body is correct Delete方法测试\", function () {",
+							"    pm.response.to.have.body({\"message\":\"删除成功\"});",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n    {\r\n        \"description\": \"外国语\",\r\n        \"id\": 1,\r\n        \"no\": \"03\",\r\n        \"school\": {\r\n            \"description\": \"管理学院\",\r\n            \"id\": 3,\r\n            \"no\": \"02\"\r\n        }\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/department.ctl?id=10",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"department.ctl"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put localhost:8080/department.ctl",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "64a2d168-7cd8-41e4-80d0-351619e68ac7",
+						"exec": [
+							"pm.test(\"Body is correctPut方法测试\", function () {",
+							"    pm.response.to.have.body({\"message\":\"修改成功\"});",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n    {\r\n        \"description\": \"生物学\",\r\n        \"id\": 2,\r\n        \"no\": \"03\",\r\n        \"school\": {\r\n            \"description\": \"管理学院\",\r\n            \"id\": 3,\r\n            \"no\": \"02\"\r\n        }\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/department.ctl?",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"department.ctl"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

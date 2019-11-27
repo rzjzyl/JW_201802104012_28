@@ -1,0 +1,111 @@
+create table degree
+(
+    id          bigint auto_increment
+        primary key,
+    description varchar(255) not null,
+    no          varchar(255) not null,
+    remarks     varchar(255) null
+);
+
+create table department
+(
+    id          bigint auto_increment
+        primary key,
+    description varchar(255) not null,
+    no          varchar(255) not null,
+    remarks     varchar(255) null,
+    school_id   bigint       not null,
+    constraint department_school_id_fk
+        foreign key (school_id) references school (id)
+);
+
+create table proftitle
+(
+    id          bigint auto_increment
+        primary key,
+    description varchar(255) not null,
+    no          varchar(255) not null,
+    remarks     varchar(255) null
+);
+
+create table school
+(
+    id          bigint auto_increment
+        primary key,
+    description varchar(255) not null,
+    no          varchar(255) not null,
+    remarks     varchar(255) null,
+    constraint no
+        unique (no)
+);
+
+create table teacher
+(
+    id        bigint auto_increment
+        primary key,
+    name      varchar(255) not null,
+    title_id  bigint       not null,
+    degree_id bigint       not null,
+    dept_id   bigint       not null,
+    constraint teacher_degree_id_fk
+        foreign key (degree_id) references degree (id),
+    constraint teacher_department_id_fk
+        foreign key (dept_id) references department (id),
+    constraint teacher_proftitle_id_fk
+        foreign key (title_id) references proftitle (id)
+);
+
+
+.\mysqld -install mysql55
+net start mysql55
+.\mysql -uroot -p
+
+create database bysj default character set utf8 collate utf8_general_ci;
+use bysj;
+
+Use bysj;
+#创建表格
+create table school (
+id bigint not null auto_increment,
+
+description varchar(255) not null,
+
+no varchar(255) not null,
+
+remarks varchar(255),
+
+school_id bigint not null,
+
+primary key (id)
+
+);
+#修改结束符
+delimiter //
+#删除存储过程如果它存在
+drop procedure if exists sp_addSchool//
+#新建存储过程
+开始定义存储过程，in为输入型参数，out是输出型参数
+create procedure sp_addSchool (
+IN description VARCHAR(255),
+no VARCHAR(255),
+remarks VARCHAR(255),
+OUT id INT
+)
+#开始定义存储过程主体，根据输入型参数内容，插入一一个school记录，将最后一个自动生成的id赋值给输出型参数@id
+BEGIN
+INSERT INTO school (description,no,remarks)
+values (description,no,remarks);
+SELECT LAST_INSERT_ID() INTO id;
+END//
+#修改结束符号
+DELIMITER ;
+
+SHOW PROCEDURE STATUS LIKE’sp%’ \G;
+
+call sp_addSchool("信息管理","2020","the best",@id);
+
+alter table school add unique(no);
+
+ http://49.234.103.40:8080/workspace/department.ctl
+ W7XThr2Scezc4ptD
+ Administrator

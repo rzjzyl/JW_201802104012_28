@@ -1,0 +1,214 @@
+{
+	"info": {
+		"_postman_id": "225cf258-7166-4311-9080-bb20ec0a34e2",
+		"name": "Teacher",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET http://localhost:8080/teacher.ctl",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "54fb3dec-097d-48a7-9d79-6bc325993640",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"",
+							"tests[\"Body matches string 管理\"] = responseBody.has(\"管理\");",
+							"tests[\"Body matches string 市政\"] = responseBody.has(\"市政\");",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/teacher.ctl",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"teacher.ctl"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET http://localhost:8080/teacher.ctl",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "54fb3dec-097d-48a7-9d79-6bc325993640",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"",
+							"tests[\"Body matches string 管理\"] = responseBody.has(\"管理\");",
+							"tests[\"Body matches string 市政\"] = responseBody.has(\"市政\");",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/teacher.ctl?id=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"teacher.ctl"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ADD http://localhost:8080/teacher.ctl",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "54fb3dec-097d-48a7-9d79-6bc325993640",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"",
+							"tests[\"Body matches string 管理\"] = responseBody.has(\"管理\");",
+							"tests[\"Body matches string 市政\"] = responseBody.has(\"市政\");",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"name\":杨九郎\",\r\n\"id\":\"3\",\r\n\"title\":{\r\n \"description\": \"教授\",\r\n        \"id\": 3,\r\n        \"no\": \"02\",\r\n        \"remarks\": \"\"\r\n},\r\n\"department\":{\r\n\t  \"description\": \"外国语\",\r\n        \"id\": 4,\r\n        \"no\": \"03\",\r\n        \"school\": {\r\n            \"description\": \"管理学院\",\r\n            \"id\": 3,\r\n            \"no\": \"02\"\r\n        }\r\n},\r\n\"degree\":{\r\n\t \"description\": \"硕士\",\r\n        \"id\": 1,\r\n        \"no\": \"02\",\r\n        \"remarks\": \"the best\"\r\n}\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/teacher.ctl?",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"teacher.ctl"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete http://localhost:8080/teacher.ctl",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "54fb3dec-097d-48a7-9d79-6bc325993640",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"",
+							"tests[\"Body matches string 管理\"] = responseBody.has(\"管理\");",
+							"tests[\"Body matches string 市政\"] = responseBody.has(\"市政\");",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"name\":杨九郎\",\r\n\"id\":\"3\",\r\n\"title\":{\r\n \"description\": \"教授\",\r\n        \"id\": 3,\r\n        \"no\": \"02\",\r\n        \"remarks\": \"\"\r\n},\r\n\"department\":{\r\n\t  \"description\": \"外国语\",\r\n        \"id\": 4,\r\n        \"no\": \"03\",\r\n        \"school\": {\r\n            \"description\": \"管理学院\",\r\n            \"id\": 3,\r\n            \"no\": \"02\"\r\n        }\r\n},\r\n\"degree\":{\r\n\t \"description\": \"硕士\",\r\n        \"id\": 1,\r\n        \"no\": \"02\",\r\n        \"remarks\": \"the best\"\r\n}\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/teacher.ctl?id=3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"teacher.ctl"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put http://localhost:8080/teacher.ctl",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "54fb3dec-097d-48a7-9d79-6bc325993640",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"",
+							"tests[\"Body matches string 管理\"] = responseBody.has(\"管理\");",
+							"tests[\"Body matches string 市政\"] = responseBody.has(\"市政\");",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"name\":杨九郎\",\r\n\"id\":\"3\",\r\n\"profTilte\":{\r\n \"description\": \"教授\",\r\n        \"id\": 3,\r\n        \"no\": \"02\",\r\n},\r\n\"department\":{\r\n\t  \"description\": \"外国语\",\r\n        \"id\": 4,\r\n        \"no\": \"03\",\r\n        \"school\": {\r\n            \"description\": \"管理学院\",\r\n            \"id\": 3,\r\n            \"no\": \"02\"\r\n        }\r\n},\r\n\"degree\":{\r\n\t \"description\": \"硕士\",\r\n        \"id\": 1,\r\n        \"no\": \"02\",\r\n        \"remarks\": \"the best\"\r\n}\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/teacher.ctl",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"teacher.ctl"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

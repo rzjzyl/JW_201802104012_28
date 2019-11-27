@@ -1,0 +1,271 @@
+{
+	"info": {
+		"_postman_id": "210b06e8-c562-4c4c-884e-4cac3a8ef903",
+		"name": "School",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:8080/school.ctl",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7c0c3a9f-d000-4764-898a-a0a9c0d18f7a",
+						"exec": [
+							"pm.test(\"Body matches string专业名称\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"管理学院\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"description\": \"xxxt\",\r\n        \"id\": 3,\r\n        \"no\": \"02\",\r\n        \"school\":{\r\n        \t\"id\":\"3\",\r\n        \t\"description\":\"管理学院\",\r\n        \t\"no\":\"02\",\r\n        \t\"remarks\":\"\"\r\n        }\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/school.ctl",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"school.ctl"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get localhost:8080/school.ctl",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b49d0f39-32eb-4e50-9036-94ca5e67a1b4",
+						"exec": [
+							"pm.test(\"Body matches string专业名称\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"土木学院\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"description\": \"xxxt\",\r\n        \"id\": 3,\r\n        \"no\": \"02\",\r\n        \"school\":{\r\n        \t\"id\":\"3\",\r\n        \t\"description\":\"管理学院\",\r\n        \t\"no\":\"02\",\r\n        \t\"remarks\":\"\"\r\n        }\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/school.ctl?id=4",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"school.ctl"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add localhost:8080/school.ctl",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8e20c74d-9903-40e1-85ee-2a6e15e231ae",
+						"exec": [
+							"pm.test(\"Post方法测试成功\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.response.to.have.body({\"message\":\"增加成功\"})",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"description\": \"外国语学院\",\r\n        \"id\": 1,\r\n        \"no\": \"03\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/school.ctl",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"school.ctl"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete localhost:8080/school.ctl",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1a5ec519-b485-4f1d-8776-0cc0b569bc2f",
+						"exec": [
+							"",
+							"pm.test(\"Body is correct Delete方法测试\", function () {",
+							"    pm.response.to.have.body({\"message\":\"删除成功\"});",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"description\": \"外国语学院\",\r\n        \"id\": 1,\r\n        \"no\": \"03\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/school.ctl?id=10",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"school.ctl"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put localhost:8080/school.ctl",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "480e2e61-5581-4142-8e99-cf1cb1898d34",
+						"exec": [
+							"pm.test(\"Body is correctPut方法测试\", function () {",
+							"    pm.response.to.have.body({\"message\":\"修改成功\"});",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"description\": \"外国语学院\",\r\n        \"id\": 1,\r\n        \"no\": \"03\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/school.ctl",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"school.ctl"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
