@@ -28,7 +28,7 @@
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<header>\n  <h1>毕业设计管理系统demo版</h1><hr width=\"80%\"><br>\n</header>\n<div>\n  <nav>\n    <a routerLink='/college' >院系管理</a>\n    <a routerLink='/department' >专业管理</a>\n    <a routerLink='/degree' >学位管理</a>\n    <a routerLink='/title' >职称管理</a>\n    <a routerLink='/teacher'>教师管理</a>\n  </nav>\n  <section><router-outlet></router-outlet></section>\n</div>\n<!-- 登录 -->\n<div class=\"container\">\n  <router-outlet></router-outlet>\n</div>\n");
+            /* harmony default export */ __webpack_exports__["default"] = ("<header>\n  <h1>毕业设计管理系统demo版</h1><hr width=\"80%\"><br>\n</header>\n<div>\n  <!--根组件指向其他组件：一种可以是根据selector选择器<app-root></app-root>;另一种可以是路由的方式routerLink-->\n  <!--创建路由模块 ng generate module app-routing --flat --module=app -->\n  <nav>\n    <a routerLink='/college' >院系管理</a>\n    <a routerLink='/department' >专业管理</a>\n    <a routerLink='/degree' >学位管理</a>\n    <a routerLink='/title' >职称管理</a>\n    <a routerLink='/teacher'>教师管理</a>\n  </nav>\n  <section><router-outlet></router-outlet></section>\n</div>\n");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/college/add-college.component.html": 
@@ -50,7 +50,7 @@
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<a routerLink=\"/addCollege\"><button > 添加学院</button></a>\n<table class=\"tablelist\">\n  <tr><th>序号</th><th>编号</th><th>学院名称</th><th>备注</th><th>操作</th></tr>\n  <tr *ngFor=\"let college of colleges\" class=\"badge\">\n    <td>{{college.id}}</td>\n    <td>{{college.no}}</td>\n    <td>{{college.description}}</td>\n    <td>{{college.remarks}}</td>\n    <td> <a routerLink=\"/updateCollege/{{college.id}}\"><button>修改</button></a>\n      <button (click)=\"delete(college)\">删除</button></td>\n  </tr>\n</table>\n\n");
+            /* harmony default export */ __webpack_exports__["default"] = ("<a routerLink=\"/addCollege\"><button> 添加学院</button></a>\n<table class=\"tablelist\">\n  <tr><th>序号</th><th>编号</th><th>学院名称</th><th>备注</th><th>操作</th></tr>\n  <tr *ngFor=\"let college of colleges\" class=\"badge\">\n    <td>{{college.id}}</td>\n    <td>{{college.no}}</td>\n    <td>{{college.description}}</td>\n    <td>{{college.remarks}}</td>\n    <td> <a routerLink=\"/updateCollege/{{college.id}}\"><button>修改</button></a>\n      <button (click)=\"delete(college)\">删除</button></td>\n  </tr>\n</table>\n\n");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/college/update-college.component.html": 
@@ -130,39 +130,6 @@
             /* harmony default export */ __webpack_exports__["default"] = ("<div *ngIf=\"department\">\n  <h2>修改专业</h2>\n  <span>所选专业信息： </span><br>\n  <label>专业编号:</label> <input  [(ngModel)]=\"department.no\" /><br>\n  <label>专业名称:</label> <input [(ngModel)]=\"department.description\" /><br>\n  <label>所属学院:</label>  <!--   ngModel用于将文本框与变量进行双向绑定。ngValue支持对象，value仅支持字符串-->\n  <select [(ngModel)]=\"department.school\" [compareWith]=\"compareFn\">\n    <option *ngFor=\"let school of colleges\" [ngValue]=\"school\">{{school.description}}</option>\n  </select><br>\n  <label class=\"remark\">备 注:</label> <textarea [(ngModel)]=\"department.remarks\" ></textarea>\n</div>\n<button (click)=\"goBack()\">返回</button>\n<button (click)=\"save()\">保存</button>\n\n");
             /***/ 
         }),
-        /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/index/index.component.html": 
-        /*!**********************************************************************************!*\
-          !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/index/index.component.html ***!
-          \**********************************************************************************/
-        /*! exports provided: default */
-        /***/ (function (module, __webpack_exports__, __webpack_require__) {
-            "use strict";
-            __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<header>\n  <h1>毕业设计管理系统demo版</h1>\n</header>\n<nav>\n    <a routerLink='/index/college' >院系管理</a>\n    <a routerLink='/index/department' >专业管理</a>\n    <a routerLink='/index/teacher'>学位管理</a>\n    <a routerLink='/index/teacher'>职称管理</a>\n    <a routerLink='/index/teacher'>教师管理</a>\n</nav>\n<section><router-outlet></router-outlet></section>\n");
-            /***/ 
-        }),
-        /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/login/Login.component.html": 
-        /*!**********************************************************************************!*\
-          !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/login/Login.component.html ***!
-          \**********************************************************************************/
-        /*! exports provided: default */
-        /***/ (function (module, __webpack_exports__, __webpack_require__) {
-            "use strict";
-            __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<div class=\"bg\">\n  <div class=\"wel\">毕业设计管理系统</div>\n  <div class=\"user\">\n    <div class=\"inuser\">用户名</div>\n    <input type=\"text\" name=\"用户\" value=\"admin\" #uName>\n  </div>\n  <div class=\"password\">\n    <div class=\"inuser\">密&nbsp;&nbsp;&nbsp;码</div>\n    <input class=\"\" type=\"password\" name=\"密码\" value=\"123456\" #uPassword>\n  </div>\n  <div class=\"rem\">\n    <input type=\"checkbox\" name=\"\" id=\"\" value=\"\">\n    <div class=\"reb\">\n      记住密码\n    </div>\n  </div>\n  <div class=\"fg\">\n    <div >\n      <a href=\"\">忘记密码？</a>\n    </div>\n  </div>\n  <button (click)=\"login(uName.value, uPassword.value)\">登录</button>\n</div>\n\n");
-            /***/ 
-        }),
-        /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/page/page.component.html": 
-        /*!********************************************************************************!*\
-          !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/page/page.component.html ***!
-          \********************************************************************************/
-        /*! exports provided: default */
-        /***/ (function (module, __webpack_exports__, __webpack_require__) {
-            "use strict";
-            __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<div class=\"box-footer clearfix\" style=\"width: 100%\">\n  <ul id=\"paging\" >\n    <li><a (click)=\"previous()\">&laquo;</a></li>\n    <ul *ngFor=\"let pag of pags\" id=\"pags\">\n      <li><a (click)=\"gitPag(pag)\" [class.active]=\"pag == pagCurren\">{{pag}}</a></li>\n    </ul>\n    <li><a (click)=\"next()\">&raquo;</a></li>  每页最大行数：\n    <select [(ngModel)]=\"pagNum\" (click)=\"gitPagNum()\">\n      <option>5</option>\n      <option>10</option>\n      <option>20</option>\n    </select> 数据总行数：{{leng}}\n  </ul>\n</div>\n");
-            /***/ 
-        }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/proftitle/add-title.component.html": 
         /*!******************************************************************************************!*\
           !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/proftitle/add-title.component.html ***!
@@ -204,7 +171,7 @@
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<div>\n  <h2>添加新老师</h2>\n  <span>请输入以下信息： </span><br>\n  <!--<label>教师编号:</label> <input #teacherNo /><br>-->\n  <label>教师名称:</label> <input #teacherName /><br>\n  <label>所属职称:</label>\n  <select [(ngModel)]=\"this.title\">\n    <option value=\"\" selected>请选择</option><--!ngValue支持对象，value仅支持字符串-->\n    <option *ngFor=\"let title of titles\" [ngValue]=\"title\">{{title.description}}</option>\n  </select><br>\n  <select [(ngModel)]=\"this.department\">\n    <option value=\"\" selected>请选择</option><--!ngValue支持对象，value仅支持字符串-->\n    <option *ngFor=\"let department of departments\" [ngValue]=\"department\">{{department.description}}</option>\n  </select><br>\n  <select [(ngModel)]=\"this.degree\">\n    <option value=\"\" selected>请选择</option><--!ngValue支持对象，value仅支持字符串-->\n    <option *ngFor=\"let degree of degrees\" [ngValue]=\"degree\">{{title.description}}</option>\n  </select><br>\n  <label>备注:</label> <textarea #depRemarks></textarea>\n</div>\n<button (click)=\"goBack()\">返回</button>\n<button (click)=\"save(teacherName.value,this.department,this.title,this.degree)\">保存</button>\n");
+            /* harmony default export */ __webpack_exports__["default"] = ("<div>\n  <h2>添加老师</h2>\n  <span>请输入以下信息： </span><br>\n  <!--<label>教师编号:</label> <input #teacherNo /><br>-->\n  <label>教师名称:</label> <input #teacherName /><br>\n  <label>所属职称:</label>\n  <select [(ngModel)]=\"this.title\">\n    <option value=\"\" selected>请选择</option><--!ngValue支持对象，value仅支持字符串-->\n    <option *ngFor=\"let title of titles\" [ngValue]=\"title\">{{title.description}}</option>\n  </select><br>\n  <label>所属学院:</label>\n  <select [(ngModel)]=\"school\" (change)=\" getDepSch(school.id)\">\n    <option *ngFor=\"let school of schools\" [ngValue]=\"school\">{{school.description}}</option>\n  </select><br>\n  <label>所属专业:</label>\n  <select [(ngModel)]=\"this.department\">\n    <option value=\"\" selected>请选择</option><--!ngValue支持对象，value仅支持字符串-->\n    <option *ngFor=\"let department of departments\" [ngValue]=\"department\">{{department.description}}</option>\n  </select><br>\n  <label>所属学位:</label>\n  <select [(ngModel)]=\"this.degree\">\n    <option value=\"\" selected>请选择</option><--!ngValue支持对象，value仅支持字符串-->\n    <option *ngFor=\"let degree of degrees\" [ngValue]=\"degree\">{{degree.description}}</option>\n  </select><br>\n</div>\n<button (click)=\"goBack()\">返回</button>\n<button (click)=\"save(teacherName.value,this.department,this.title,this.degree)\">保存</button>\n");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/teacher/teacher.component.html": 
@@ -226,7 +193,7 @@
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<div *ngIf=\"teacher\">\n  <h2>修改教师</h2>\n  <span>所选教师信息： </span><br>\n  <label>教师编号:</label> <input  [(ngModel)]=\"teacher.no\" /><br>\n  <label>教师名称:</label> <input [(ngModel)]=\"teacher.name\" /><br>\n  <label>所属专业:</label>  <!--   ngModel用于将文本框与变量进行双向绑定。ngValue支持对象，value仅支持字符串-->\n  <select [(ngModel)]=\"teacher.department\" [compareWith]=\"compareFn\">\n    <option *ngFor=\"let department of departments\" [ngValue]=\"department\">{{department.description}}</option>\n  </select><br>\n  <label>所属职称:</label>  <!--   ngModel用于将文本框与变量进行双向绑定。ngValue支持对象，value仅支持字符串-->\n  <select [(ngModel)]=\"teacher.title\" [compareWith]=\"compareFn\">\n    <option *ngFor=\"let title of titles\" [ngValue]=\"title\">{{title.description}}</option>\n  </select><br>\n  <label>所属学位:</label>  <!--   ngModel用于将文本框与变量进行双向绑定。ngValue支持对象，value仅支持字符串-->\n  <select [(ngModel)]=\"teacher.degree\" [compareWith]=\"compareFn\">\n    <option *ngFor=\"let degree of degrees\" [ngValue]=\"degree\">{{degree.description}}</option>\n  </select><br>\n</div>\n<button (click)=\"goBack()\">返回</button>\n<button (click)=\"save()\">保存</button>\n");
+            /* harmony default export */ __webpack_exports__["default"] = ("<div *ngIf=\"teacher\">\n  <h2>修改教师</h2>\n  <span>所选教师信息： </span><br>\n  <label>教师编号:</label> <input  [(ngModel)]=\"teacher.no\" /><br>\n  <label>教师名称:</label> <input [(ngModel)]=\"teacher.name\" /><br>\n  <label>所属学院:</label>\n  <select [(ngModel)]=\"school\" (change)=\" getDepSch(school.id)\" [compareWith]=\"compareFn\">\n    <option *ngFor=\"let school of schools\" [ngValue]=\"school\">{{school.description}}</option>\n  </select><br>\n  <label>所属专业:</label>  <!--   ngModel用于将文本框与变量进行双向绑定。ngValue支持对象，value仅支持字符串-->\n  <select [(ngModel)]=\"teacher.department\" [compareWith]=\"compareFn\">\n    <option *ngFor=\"let department of departments\" [ngValue]=\"department\">{{department.description}}</option>\n  </select><br>\n  <label>所属职称:</label>  <!--   ngModel用于将文本框与变量进行双向绑定。ngValue支持对象，value仅支持字符串-->\n  <select [(ngModel)]=\"teacher.title\" [compareWith]=\"compareFn\">\n    <option *ngFor=\"let title of titles\" [ngValue]=\"title\">{{title.description}}</option>\n  </select><br>\n  <label>所属学位:</label>  <!--   ngModel用于将文本框与变量进行双向绑定。ngValue支持对象，value仅支持字符串-->\n  <select [(ngModel)]=\"teacher.degree\" [compareWith]=\"compareFn\">\n    <option *ngFor=\"let degree of degrees\" [ngValue]=\"degree\">{{degree.description}}</option>\n  </select><br>\n</div>\n<button (click)=\"goBack()\">返回</button>\n<button (click)=\"save()\">保存</button>\n");
             /***/ 
         }),
         /***/ "./node_modules/tslib/tslib.es6.js": 
@@ -556,31 +523,25 @@
             /* harmony import */ var _proftitle_proftitle_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./proftitle/proftitle.component */ "./src/app/proftitle/proftitle.component.ts");
             /* harmony import */ var _proftitle_add_title_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./proftitle/add-title.component */ "./src/app/proftitle/add-title.component.ts");
             /* harmony import */ var _proftitle_update_title_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./proftitle/update-title.component */ "./src/app/proftitle/update-title.component.ts");
-            /* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./login/login.component */ "./src/app/login/login.component.ts");
-            /* harmony import */ var _index_index_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./index/index.component */ "./src/app/index/index.component.ts");
             var routes = [
-                { path: '', component: _login_login_component__WEBPACK_IMPORTED_MODULE_18__["LoginComponent"], pathMatch: 'full' },
-                { path: 'index', component: _index_index_component__WEBPACK_IMPORTED_MODULE_19__["IndexComponent"], children: [
-                        { path: '', redirectTo: '/college', pathMatch: 'full' },
-                        { path: '', redirectTo: '/college', pathMatch: 'full' },
-                        { path: 'college', component: _college_college_component__WEBPACK_IMPORTED_MODULE_5__["CollegeComponent"] },
-                        { path: 'department', component: _department_department_component__WEBPACK_IMPORTED_MODULE_9__["DepartmentComponent"] },
-                        { path: 'teacher', component: _teacher_teacher_component__WEBPACK_IMPORTED_MODULE_6__["TeacherComponent"] },
-                        { path: 'degree', component: _degree_degree_component__WEBPACK_IMPORTED_MODULE_12__["DegreeComponent"] },
-                        { path: 'title', component: _proftitle_proftitle_component__WEBPACK_IMPORTED_MODULE_15__["ProfTitleComponent"] },
-                        { path: 'addCollege', component: _college_add_college_component__WEBPACK_IMPORTED_MODULE_3__["AddCollegeComponent"] },
-                        { path: 'updateCollege/:id', component: _college_update_college_component__WEBPACK_IMPORTED_MODULE_4__["UpdateCollegeComponent"] },
-                        { path: 'addDegree', component: _degree_add_degree_component__WEBPACK_IMPORTED_MODULE_13__["AddDegreeComponent"] },
-                        { path: 'updateDegree/:id', component: _degree_update_degree_component__WEBPACK_IMPORTED_MODULE_14__["UpdateDegreeComponent"] },
-                        { path: 'addDep', component: _department_add_dep_component__WEBPACK_IMPORTED_MODULE_10__["AddDepComponent"] },
-                        { path: 'updateDep/:id', component: _department_update_dep_component__WEBPACK_IMPORTED_MODULE_11__["UpdateDepComponent"] },
-                        { path: 'addTeacher', component: _teacher_add_teacher_component__WEBPACK_IMPORTED_MODULE_7__["AddTeacherComponent"] },
-                        { path: 'updateTeacher/:id', component: _teacher_update_teacher_component__WEBPACK_IMPORTED_MODULE_8__["UpdateTeacherComponent"] },
-                        { path: 'addTitle', component: _proftitle_add_title_component__WEBPACK_IMPORTED_MODULE_16__["AddTitleComponent"] },
-                        { path: 'updateTitle/:id', component: _proftitle_update_title_component__WEBPACK_IMPORTED_MODULE_17__["UpdateTitleComponent"] }
-                    ] },
+                // 初始化，先显示学院
+                { path: '', redirectTo: '/college', pathMatch: 'full' },
+                { path: 'college', component: _college_college_component__WEBPACK_IMPORTED_MODULE_5__["CollegeComponent"] },
+                { path: 'department', component: _department_department_component__WEBPACK_IMPORTED_MODULE_9__["DepartmentComponent"] },
+                { path: 'teacher', component: _teacher_teacher_component__WEBPACK_IMPORTED_MODULE_6__["TeacherComponent"] },
+                { path: 'degree', component: _degree_degree_component__WEBPACK_IMPORTED_MODULE_12__["DegreeComponent"] },
+                { path: 'title', component: _proftitle_proftitle_component__WEBPACK_IMPORTED_MODULE_15__["ProfTitleComponent"] },
+                { path: 'addCollege', component: _college_add_college_component__WEBPACK_IMPORTED_MODULE_3__["AddCollegeComponent"] },
+                { path: 'updateCollege/:id', component: _college_update_college_component__WEBPACK_IMPORTED_MODULE_4__["UpdateCollegeComponent"] },
+                { path: 'addDegree', component: _degree_add_degree_component__WEBPACK_IMPORTED_MODULE_13__["AddDegreeComponent"] },
+                { path: 'updateDegree/:id', component: _degree_update_degree_component__WEBPACK_IMPORTED_MODULE_14__["UpdateDegreeComponent"] },
+                { path: 'addDep', component: _department_add_dep_component__WEBPACK_IMPORTED_MODULE_10__["AddDepComponent"] },
+                { path: 'updateDep/:id', component: _department_update_dep_component__WEBPACK_IMPORTED_MODULE_11__["UpdateDepComponent"] },
+                { path: 'addTeacher', component: _teacher_add_teacher_component__WEBPACK_IMPORTED_MODULE_7__["AddTeacherComponent"] },
+                { path: 'updateTeacher/:id', component: _teacher_update_teacher_component__WEBPACK_IMPORTED_MODULE_8__["UpdateTeacherComponent"] },
+                { path: 'addTitle', component: _proftitle_add_title_component__WEBPACK_IMPORTED_MODULE_16__["AddTitleComponent"] },
+                { path: 'updateTitle/:id', component: _proftitle_update_title_component__WEBPACK_IMPORTED_MODULE_17__["UpdateTitleComponent"] }
             ];
-            // @ts-ignore
             var AppRoutingModule = /** @class */ (function () {
                 function AppRoutingModule() {
                 }
@@ -663,10 +624,7 @@
             /* harmony import */ var _proftitle_proftitle_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./proftitle/proftitle.component */ "./src/app/proftitle/proftitle.component.ts");
             /* harmony import */ var _proftitle_add_title_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./proftitle/add-title.component */ "./src/app/proftitle/add-title.component.ts");
             /* harmony import */ var _proftitle_update_title_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./proftitle/update-title.component */ "./src/app/proftitle/update-title.component.ts");
-            /* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./login/login.component */ "./src/app/login/login.component.ts");
-            /* harmony import */ var _index_index_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./index/index.component */ "./src/app/index/index.component.ts");
-            /* harmony import */ var _page_page_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./page/page.component */ "./src/app/page/page.component.ts");
-            // tslint:disable-next-line:import-spacing
+            // 手工引入HttpClientModule
             var AppModule = /** @class */ (function () {
                 function AppModule() {
                 }
@@ -690,17 +648,13 @@
                         _degree_update_degree_component__WEBPACK_IMPORTED_MODULE_19__["UpdateDegreeComponent"],
                         _proftitle_proftitle_component__WEBPACK_IMPORTED_MODULE_20__["ProfTitleComponent"],
                         _proftitle_add_title_component__WEBPACK_IMPORTED_MODULE_21__["AddTitleComponent"],
-                        _proftitle_update_title_component__WEBPACK_IMPORTED_MODULE_22__["UpdateTitleComponent"],
-                        _login_login_component__WEBPACK_IMPORTED_MODULE_23__["LoginComponent"],
-                        _index_index_component__WEBPACK_IMPORTED_MODULE_24__["IndexComponent"],
-                        _page_page_component__WEBPACK_IMPORTED_MODULE_25__["PageComponent"]
+                        _proftitle_update_title_component__WEBPACK_IMPORTED_MODULE_22__["UpdateTitleComponent"]
                     ],
                     imports: [
                         _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
                         _app_routing_module__WEBPACK_IMPORTED_MODULE_8__["AppRoutingModule"],
                         _angular_common_http__WEBPACK_IMPORTED_MODULE_9__["HttpClientModule"],
-                        _angular_forms__WEBPACK_IMPORTED_MODULE_12__["FormsModule"],
-                        _angular_forms__WEBPACK_IMPORTED_MODULE_12__["ReactiveFormsModule"]
+                        _angular_forms__WEBPACK_IMPORTED_MODULE_12__["FormsModule"]
                     ],
                     providers: [{ provide: _angular_common__WEBPACK_IMPORTED_MODULE_3__["LocationStrategy"], useClass: _angular_common__WEBPACK_IMPORTED_MODULE_3__["HashLocationStrategy"], }],
                     bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
@@ -802,6 +756,7 @@
                 CollegeComponent.prototype.ngOnInit = function () {
                     this.getColleges();
                 };
+                // 调用service中的获取数据方法，如果获取数据成功，把数据res指向的赋给this.colleges（this.colleges前台可以使用）
                 CollegeComponent.prototype.getColleges = function () {
                     var _this = this;
                     this.schoolService.getColleges()
@@ -1264,208 +1219,6 @@
             ], UpdateDepComponent);
             /***/ 
         }),
-        /***/ "./src/app/index/index.component.css": 
-        /*!*******************************************!*\
-          !*** ./src/app/index/index.component.css ***!
-          \*******************************************/
-        /*! exports provided: default */
-        /***/ (function (module, __webpack_exports__, __webpack_require__) {
-            "use strict";
-            __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("/* AppComponent's private CSS styles */\nh1 {\n  font-size: 1.2em;\n  margin-bottom: 0;\n  color: #2d456b;\n}\nheader{\n  position: fixed;\n  top:0; left:0;\n  border-bottom:solid 3px #eeeeff;\n  text-align:center;\n  background: linear-gradient(to bottom,  #e7f0fd 0%, #accbee 15%, #e7f0fd 85%,#fff 100%);\n  height:60px;\n  width: 100%;\n  padding-top:5px;\n}\nnav{\n  position: fixed;\n  top: 68px;left:0;\n  width:200px; height:100%;\n  border-right:solid 3px #eeeeff;\n  }\nsection{\n  position: absolute;\n  top: 68px;\n  left: 200px;\n  width: 80%;\n  padding-left:20px;\n  padding-top:10px;\n}\nnav a {\n  padding: 5px 10px;\n  text-decoration: none;\n  margin: 10px;\n  display: block;\n  background-color: #eee;\n  border-radius: 4px;\n}\nnav a:visited, a:link {\n  color: #334953;\n}\nnav a:hover {\n  color: #039be5;\n  background-color: #CFD8DC;\n}\nnav a.active {\n  color: #039be5;\n}\nnav a,input{ margin-right:10px;}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaW5kZXgvaW5kZXguY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxzQ0FBc0M7QUFDdEM7RUFDRSxnQkFBZ0I7RUFDaEIsZ0JBQWdCO0VBQ2hCLGNBQWM7QUFDaEI7QUFDQTtFQUNFLGVBQWU7RUFDZixLQUFLLEVBQUUsTUFBTTtFQUNiLCtCQUErQjtFQUMvQixpQkFBaUI7RUFDakIsdUZBQXVGO0VBQ3ZGLFdBQVc7RUFDWCxXQUFXO0VBQ1gsZUFBZTtBQUNqQjtBQUVBO0VBQ0UsZUFBZTtFQUNmLFNBQVMsQ0FBQyxNQUFNO0VBQ2hCLFdBQVcsRUFBRSxXQUFXO0VBQ3hCLDhCQUE4QjtFQUM5QjtBQUNGO0VBQ0Usa0JBQWtCO0VBQ2xCLFNBQVM7RUFDVCxXQUFXO0VBQ1gsVUFBVTtFQUNWLGlCQUFpQjtFQUNqQixnQkFBZ0I7QUFDbEI7QUFDQTtFQUNFLGlCQUFpQjtFQUNqQixxQkFBcUI7RUFDckIsWUFBWTtFQUNaLGNBQWM7RUFDZCxzQkFBc0I7RUFDdEIsa0JBQWtCO0FBQ3BCO0FBQ0E7RUFDRSxjQUFjO0FBQ2hCO0FBQ0E7RUFDRSxjQUFjO0VBQ2QseUJBQXlCO0FBQzNCO0FBQ0E7RUFDRSxjQUFjO0FBQ2hCO0FBQ0EsYUFBYSxpQkFBaUIsQ0FBQyIsImZpbGUiOiJzcmMvYXBwL2luZGV4L2luZGV4LmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIvKiBBcHBDb21wb25lbnQncyBwcml2YXRlIENTUyBzdHlsZXMgKi9cbmgxIHtcbiAgZm9udC1zaXplOiAxLjJlbTtcbiAgbWFyZ2luLWJvdHRvbTogMDtcbiAgY29sb3I6ICMyZDQ1NmI7XG59XG5oZWFkZXJ7XG4gIHBvc2l0aW9uOiBmaXhlZDtcbiAgdG9wOjA7IGxlZnQ6MDtcbiAgYm9yZGVyLWJvdHRvbTpzb2xpZCAzcHggI2VlZWVmZjtcbiAgdGV4dC1hbGlnbjpjZW50ZXI7XG4gIGJhY2tncm91bmQ6IGxpbmVhci1ncmFkaWVudCh0byBib3R0b20sICAjZTdmMGZkIDAlLCAjYWNjYmVlIDE1JSwgI2U3ZjBmZCA4NSUsI2ZmZiAxMDAlKTtcbiAgaGVpZ2h0OjYwcHg7XG4gIHdpZHRoOiAxMDAlO1xuICBwYWRkaW5nLXRvcDo1cHg7XG59XG5cbm5hdntcbiAgcG9zaXRpb246IGZpeGVkO1xuICB0b3A6IDY4cHg7bGVmdDowO1xuICB3aWR0aDoyMDBweDsgaGVpZ2h0OjEwMCU7XG4gIGJvcmRlci1yaWdodDpzb2xpZCAzcHggI2VlZWVmZjtcbiAgfVxuc2VjdGlvbntcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICB0b3A6IDY4cHg7XG4gIGxlZnQ6IDIwMHB4O1xuICB3aWR0aDogODAlO1xuICBwYWRkaW5nLWxlZnQ6MjBweDtcbiAgcGFkZGluZy10b3A6MTBweDtcbn1cbm5hdiBhIHtcbiAgcGFkZGluZzogNXB4IDEwcHg7XG4gIHRleHQtZGVjb3JhdGlvbjogbm9uZTtcbiAgbWFyZ2luOiAxMHB4O1xuICBkaXNwbGF5OiBibG9jaztcbiAgYmFja2dyb3VuZC1jb2xvcjogI2VlZTtcbiAgYm9yZGVyLXJhZGl1czogNHB4O1xufVxubmF2IGE6dmlzaXRlZCwgYTpsaW5rIHtcbiAgY29sb3I6ICMzMzQ5NTM7XG59XG5uYXYgYTpob3ZlciB7XG4gIGNvbG9yOiAjMDM5YmU1O1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjQ0ZEOERDO1xufVxubmF2IGEuYWN0aXZlIHtcbiAgY29sb3I6ICMwMzliZTU7XG59XG5uYXYgYSxpbnB1dHsgbWFyZ2luLXJpZ2h0OjEwcHg7fVxuIl19 */");
-            /***/ 
-        }),
-        /***/ "./src/app/index/index.component.ts": 
-        /*!******************************************!*\
-          !*** ./src/app/index/index.component.ts ***!
-          \******************************************/
-        /*! exports provided: IndexComponent */
-        /***/ (function (module, __webpack_exports__, __webpack_require__) {
-            "use strict";
-            __webpack_require__.r(__webpack_exports__);
-            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "IndexComponent", function () { return IndexComponent; });
-            /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-            /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-            var IndexComponent = /** @class */ (function () {
-                function IndexComponent() {
-                }
-                IndexComponent.prototype.ngOnInit = function () {
-                };
-                return IndexComponent;
-            }());
-            IndexComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-                Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-                    selector: 'app-index',
-                    template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./index.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/index/index.component.html")).default,
-                    styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./index.component.css */ "./src/app/index/index.component.css")).default]
-                })
-            ], IndexComponent);
-            /***/ 
-        }),
-        /***/ "./src/app/login/Login.component.css": 
-        /*!*******************************************!*\
-          !*** ./src/app/login/Login.component.css ***!
-          \*******************************************/
-        /*! exports provided: default */
-        /***/ (function (module, __webpack_exports__, __webpack_require__) {
-            "use strict";
-            __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("\n*{\n  font-family: \"微软雅黑\", serif;\n  font-size: 16px;\n  border: 0;\n  color: #666;\n  box-sizing:border-box;\n  -moz-box-sizing:border-box;\n  -webkit-box-sizing:border-box;\n}\n.bg{\n  width: 415px;\n  height: 337px;\n  background: #eef;\n  position:absolute;\n  left:0;\n  top:0;\n  right:0;\n  bottom:0;\n  margin:auto;\n  z-index: 1;\n  box-shadow:0 0 30px rgba(0, 0, 0, 0.4);\n  border-radius: 15px;\n}\n.password{\n  position: absolute;\n  top: 9.5rem;\n  right: 3.5rem;\n  display: flex;\n}\nbutton{\n  position: absolute;\n  top: 16rem;\n  right: 3.5rem;\n  border: none;\n  color: #fff;\n  width: 18.825rem;\n  text-align: center;\n  background-color: #2D456B;\n  line-height: 40px;\n}\n.img{\n  width: 100%;\n  position: absolute;\n  left: 0;\n  right: 0;\n  margin: 0 auto;\n  z-index: -1;\n}\n.wel{\n  width: 415px;\n  height: 35px;\n  color: #2d456b;\n  font-size: 1.5rem;\n  position: absolute;\n  top: 2rem;\n  text-align: center;\n}\ninput{\n  border-bottom:0.0625rem solid #2D456B;\n  height: 2.5625rem;\n  width: 15.8125rem;\n  text-indent: 3.125rem;\n  outline:none;\n  background-color: #eef;\n}\n.user{\n  position: absolute;\n  top: 6rem;\n  right: 3.5rem;\n  display: flex;\n\n}\n.rem{\n  position: absolute;\n  top: 12.5rem;\n  right: 18.2rem;\n  border: none;\n  color: #323333;\n}\n.rem input{\n  width: 0.8125rem;\n}\n.fg{\n  position: absolute;\n  top: 12.5rem;\n  right: 3.5rem;\n  border: none;\n  color: #323333;\n}\n.inuser{\n  border-bottom:1px solid #2D456B;\n  height: 41px;\n  line-height: 41px;\n}\n.reb{\n  margin-top: -33px;\n  margin-left: 20px;\n  font-size: 11px;\n}\n@media (min-width:800px) and (max-width:1200px)\n\n{\n  .bg{\n    width: 355px;\n    height: 300px;\n  }\n  .wel{\n    width: 355px;\n  }\n  .user{\n    top: 5rem;\n    right: 3.5rem;\n  }\n  .password{\n    top: 8rem;\n    right: 3.5rem;\n  }\n  input{\n\n    width: 12rem;\n  }\n  .rem{\n    top: 11rem;\n    right: 14.3rem;\n  }\n  .fg{\n    top: 11rem;\n    right: 3.5rem;\n  }\n  button{\n    top: 14rem;\n    width: 15rem;\n  }\n\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbG9naW4vTG9naW4uY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO0FBQ0E7RUFDRSwwQkFBMEI7RUFDMUIsZUFBZTtFQUNmLFNBQVM7RUFDVCxXQUFXO0VBQ1gscUJBQXFCO0VBQ3JCLDBCQUEwQjtFQUMxQiw2QkFBNkI7QUFDL0I7QUFDQTtFQUNFLFlBQVk7RUFDWixhQUFhO0VBQ2IsZ0JBQWdCO0VBQ2hCLGlCQUFpQjtFQUNqQixNQUFNO0VBQ04sS0FBSztFQUNMLE9BQU87RUFDUCxRQUFRO0VBQ1IsV0FBVztFQUNYLFVBQVU7RUFDVixzQ0FBc0M7RUFDdEMsbUJBQW1CO0FBQ3JCO0FBQ0E7RUFDRSxrQkFBa0I7RUFDbEIsV0FBVztFQUNYLGFBQWE7RUFDYixhQUFhO0FBQ2Y7QUFDQTtFQUNFLGtCQUFrQjtFQUNsQixVQUFVO0VBQ1YsYUFBYTtFQUNiLFlBQVk7RUFDWixXQUFXO0VBQ1gsZ0JBQWdCO0VBQ2hCLGtCQUFrQjtFQUNsQix5QkFBeUI7RUFDekIsaUJBQWlCO0FBQ25CO0FBQ0E7RUFDRSxXQUFXO0VBQ1gsa0JBQWtCO0VBQ2xCLE9BQU87RUFDUCxRQUFRO0VBQ1IsY0FBYztFQUNkLFdBQVc7QUFDYjtBQUNBO0VBQ0UsWUFBWTtFQUNaLFlBQVk7RUFDWixjQUFjO0VBQ2QsaUJBQWlCO0VBQ2pCLGtCQUFrQjtFQUNsQixTQUFTO0VBQ1Qsa0JBQWtCO0FBQ3BCO0FBQ0E7RUFDRSxxQ0FBcUM7RUFDckMsaUJBQWlCO0VBQ2pCLGlCQUFpQjtFQUNqQixxQkFBcUI7RUFDckIsWUFBWTtFQUNaLHNCQUFzQjtBQUN4QjtBQUNBO0VBQ0Usa0JBQWtCO0VBQ2xCLFNBQVM7RUFDVCxhQUFhO0VBQ2IsYUFBYTs7QUFFZjtBQUNBO0VBQ0Usa0JBQWtCO0VBQ2xCLFlBQVk7RUFDWixjQUFjO0VBQ2QsWUFBWTtFQUNaLGNBQWM7QUFDaEI7QUFDQTtFQUNFLGdCQUFnQjtBQUNsQjtBQUNBO0VBQ0Usa0JBQWtCO0VBQ2xCLFlBQVk7RUFDWixhQUFhO0VBQ2IsWUFBWTtFQUNaLGNBQWM7QUFDaEI7QUFDQTtFQUNFLCtCQUErQjtFQUMvQixZQUFZO0VBQ1osaUJBQWlCO0FBQ25CO0FBQ0E7RUFDRSxpQkFBaUI7RUFDakIsaUJBQWlCO0VBQ2pCLGVBQWU7QUFDakI7QUFHQTs7O0VBR0U7SUFDRSxZQUFZO0lBQ1osYUFBYTtFQUNmO0VBQ0E7SUFDRSxZQUFZO0VBQ2Q7RUFDQTtJQUNFLFNBQVM7SUFDVCxhQUFhO0VBQ2Y7RUFDQTtJQUNFLFNBQVM7SUFDVCxhQUFhO0VBQ2Y7RUFDQTs7SUFFRSxZQUFZO0VBQ2Q7RUFDQTtJQUNFLFVBQVU7SUFDVixjQUFjO0VBQ2hCO0VBQ0E7SUFDRSxVQUFVO0lBQ1YsYUFBYTtFQUNmO0VBQ0E7SUFDRSxVQUFVO0lBQ1YsWUFBWTtFQUNkOztBQUVGIiwiZmlsZSI6InNyYy9hcHAvbG9naW4vTG9naW4uY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIlxuKntcbiAgZm9udC1mYW1pbHk6IFwi5b6u6L2v6ZuF6buRXCIsIHNlcmlmO1xuICBmb250LXNpemU6IDE2cHg7XG4gIGJvcmRlcjogMDtcbiAgY29sb3I6ICM2NjY7XG4gIGJveC1zaXppbmc6Ym9yZGVyLWJveDtcbiAgLW1vei1ib3gtc2l6aW5nOmJvcmRlci1ib3g7XG4gIC13ZWJraXQtYm94LXNpemluZzpib3JkZXItYm94O1xufVxuLmJne1xuICB3aWR0aDogNDE1cHg7XG4gIGhlaWdodDogMzM3cHg7XG4gIGJhY2tncm91bmQ6ICNlZWY7XG4gIHBvc2l0aW9uOmFic29sdXRlO1xuICBsZWZ0OjA7XG4gIHRvcDowO1xuICByaWdodDowO1xuICBib3R0b206MDtcbiAgbWFyZ2luOmF1dG87XG4gIHotaW5kZXg6IDE7XG4gIGJveC1zaGFkb3c6MCAwIDMwcHggcmdiYSgwLCAwLCAwLCAwLjQpO1xuICBib3JkZXItcmFkaXVzOiAxNXB4O1xufVxuLnBhc3N3b3Jke1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHRvcDogOS41cmVtO1xuICByaWdodDogMy41cmVtO1xuICBkaXNwbGF5OiBmbGV4O1xufVxuYnV0dG9ue1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHRvcDogMTZyZW07XG4gIHJpZ2h0OiAzLjVyZW07XG4gIGJvcmRlcjogbm9uZTtcbiAgY29sb3I6ICNmZmY7XG4gIHdpZHRoOiAxOC44MjVyZW07XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgYmFja2dyb3VuZC1jb2xvcjogIzJENDU2QjtcbiAgbGluZS1oZWlnaHQ6IDQwcHg7XG59XG4uaW1ne1xuICB3aWR0aDogMTAwJTtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICBsZWZ0OiAwO1xuICByaWdodDogMDtcbiAgbWFyZ2luOiAwIGF1dG87XG4gIHotaW5kZXg6IC0xO1xufVxuLndlbHtcbiAgd2lkdGg6IDQxNXB4O1xuICBoZWlnaHQ6IDM1cHg7XG4gIGNvbG9yOiAjMmQ0NTZiO1xuICBmb250LXNpemU6IDEuNXJlbTtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICB0b3A6IDJyZW07XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbn1cbmlucHV0e1xuICBib3JkZXItYm90dG9tOjAuMDYyNXJlbSBzb2xpZCAjMkQ0NTZCO1xuICBoZWlnaHQ6IDIuNTYyNXJlbTtcbiAgd2lkdGg6IDE1LjgxMjVyZW07XG4gIHRleHQtaW5kZW50OiAzLjEyNXJlbTtcbiAgb3V0bGluZTpub25lO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZWVmO1xufVxuLnVzZXJ7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgdG9wOiA2cmVtO1xuICByaWdodDogMy41cmVtO1xuICBkaXNwbGF5OiBmbGV4O1xuXG59XG4ucmVte1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHRvcDogMTIuNXJlbTtcbiAgcmlnaHQ6IDE4LjJyZW07XG4gIGJvcmRlcjogbm9uZTtcbiAgY29sb3I6ICMzMjMzMzM7XG59XG4ucmVtIGlucHV0e1xuICB3aWR0aDogMC44MTI1cmVtO1xufVxuLmZne1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHRvcDogMTIuNXJlbTtcbiAgcmlnaHQ6IDMuNXJlbTtcbiAgYm9yZGVyOiBub25lO1xuICBjb2xvcjogIzMyMzMzMztcbn1cbi5pbnVzZXJ7XG4gIGJvcmRlci1ib3R0b206MXB4IHNvbGlkICMyRDQ1NkI7XG4gIGhlaWdodDogNDFweDtcbiAgbGluZS1oZWlnaHQ6IDQxcHg7XG59XG4ucmVie1xuICBtYXJnaW4tdG9wOiAtMzNweDtcbiAgbWFyZ2luLWxlZnQ6IDIwcHg7XG4gIGZvbnQtc2l6ZTogMTFweDtcbn1cblxuXG5AbWVkaWEgKG1pbi13aWR0aDo4MDBweCkgYW5kIChtYXgtd2lkdGg6MTIwMHB4KVxuXG57XG4gIC5iZ3tcbiAgICB3aWR0aDogMzU1cHg7XG4gICAgaGVpZ2h0OiAzMDBweDtcbiAgfVxuICAud2Vse1xuICAgIHdpZHRoOiAzNTVweDtcbiAgfVxuICAudXNlcntcbiAgICB0b3A6IDVyZW07XG4gICAgcmlnaHQ6IDMuNXJlbTtcbiAgfVxuICAucGFzc3dvcmR7XG4gICAgdG9wOiA4cmVtO1xuICAgIHJpZ2h0OiAzLjVyZW07XG4gIH1cbiAgaW5wdXR7XG5cbiAgICB3aWR0aDogMTJyZW07XG4gIH1cbiAgLnJlbXtcbiAgICB0b3A6IDExcmVtO1xuICAgIHJpZ2h0OiAxNC4zcmVtO1xuICB9XG4gIC5mZ3tcbiAgICB0b3A6IDExcmVtO1xuICAgIHJpZ2h0OiAzLjVyZW07XG4gIH1cbiAgYnV0dG9ue1xuICAgIHRvcDogMTRyZW07XG4gICAgd2lkdGg6IDE1cmVtO1xuICB9XG5cbn1cbiJdfQ== */");
-            /***/ 
-        }),
-        /***/ "./src/app/login/login.component.ts": 
-        /*!******************************************!*\
-          !*** ./src/app/login/login.component.ts ***!
-          \******************************************/
-        /*! exports provided: LoginComponent */
-        /***/ (function (module, __webpack_exports__, __webpack_require__) {
-            "use strict";
-            __webpack_require__.r(__webpack_exports__);
-            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginComponent", function () { return LoginComponent; });
-            /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-            /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-            /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
-            var LoginComponent = /** @class */ (function () {
-                function LoginComponent(router) {
-                    this.router = router;
-                }
-                LoginComponent.prototype.ngOnInit = function () {
-                };
-                LoginComponent.prototype.login = function (un, up) {
-                    this.uname = un;
-                    this.password = up;
-                    if (this.uname === 'admin' && this.password === '123456') {
-                        this.router.navigateByUrl('/index/college');
-                    }
-                    else {
-                        alert('用户名或密码错误');
-                    }
-                };
-                return LoginComponent;
-            }());
-            LoginComponent.ctorParameters = function () { return [
-                { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }
-            ]; };
-            LoginComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-                Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-                    selector: 'app-Login',
-                    template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./Login.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/login/Login.component.html")).default,
-                    styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./Login.component.css */ "./src/app/login/Login.component.css")).default]
-                })
-            ], LoginComponent);
-            /***/ 
-        }),
-        /***/ "./src/app/page/page.component.css": 
-        /*!*****************************************!*\
-          !*** ./src/app/page/page.component.css ***!
-          \*****************************************/
-        /*! exports provided: default */
-        /***/ (function (module, __webpack_exports__, __webpack_require__) {
-            "use strict";
-            __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("#pags li,\r\n#paging li{\r\n  float: left;\r\n  display: inline-block;\r\n  border: 1px solid #DDDDDD;\r\n  cursor: pointer;\r\n  padding: 4px 0;\r\n}\r\n#paging li a,\r\n#pags li a{\r\n  padding: 4px 13px;\r\n}\r\n#paging{\r\n}\r\nselect{\r\n  height: 30px;\r\n  border: 1px solid #DDDDDD;\r\n  cursor:pointer;\r\n}\r\n.active{\r\n  background-color: #EEEEEE;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZS9wYWdlLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7O0VBRUUsV0FBVztFQUNYLHFCQUFxQjtFQUNyQix5QkFBeUI7RUFDekIsZUFBZTtFQUNmLGNBQWM7QUFDaEI7QUFDQTs7RUFFRSxpQkFBaUI7QUFDbkI7QUFDQTtBQUNBO0FBQ0E7RUFDRSxZQUFZO0VBQ1oseUJBQXlCO0VBQ3pCLGNBQWM7QUFDaEI7QUFDQTtFQUNFLHlCQUF5QjtBQUMzQiIsImZpbGUiOiJzcmMvYXBwL3BhZ2UvcGFnZS5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiI3BhZ3MgbGksXHJcbiNwYWdpbmcgbGl7XHJcbiAgZmxvYXQ6IGxlZnQ7XHJcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xyXG4gIGJvcmRlcjogMXB4IHNvbGlkICNEREREREQ7XHJcbiAgY3Vyc29yOiBwb2ludGVyO1xyXG4gIHBhZGRpbmc6IDRweCAwO1xyXG59XHJcbiNwYWdpbmcgbGkgYSxcclxuI3BhZ3MgbGkgYXtcclxuICBwYWRkaW5nOiA0cHggMTNweDtcclxufVxyXG4jcGFnaW5ne1xyXG59XHJcbnNlbGVjdHtcclxuICBoZWlnaHQ6IDMwcHg7XHJcbiAgYm9yZGVyOiAxcHggc29saWQgI0RERERERDtcclxuICBjdXJzb3I6cG9pbnRlcjtcclxufVxyXG4uYWN0aXZle1xyXG4gIGJhY2tncm91bmQtY29sb3I6ICNFRUVFRUU7XHJcbn1cclxuIl19 */");
-            /***/ 
-        }),
-        /***/ "./src/app/page/page.component.ts": 
-        /*!****************************************!*\
-          !*** ./src/app/page/page.component.ts ***!
-          \****************************************/
-        /*! exports provided: PageComponent */
-        /***/ (function (module, __webpack_exports__, __webpack_require__) {
-            "use strict";
-            __webpack_require__.r(__webpack_exports__);
-            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PageComponent", function () { return PageComponent; });
-            /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-            /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-            var PageComponent = /** @class */ (function () {
-                function PageComponent() {
-                    this.currentPag = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"](); // 点击按钮 子组件传递事件给父级组件
-                    this.pagNums = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
-                    this.pagNum = 5; // 每页显示数据数量
-                    this.pagCurren = 1; // 当前页码
-                    this.oldPagNum = 5;
-                }
-                // 默认当前显示页是1，每页显示数量5
-                PageComponent.prototype.ngOnInit = function () {
-                    this.currentPag.emit(this.pagCurren);
-                    this.pagNums.emit(this.pagNum);
-                    console.log('init,, ' + this.leng + ',,' + this.pags.length);
-                };
-                // 初始化调用
-                PageComponent.prototype.ngOnChanges = function (changes) {
-                    this.pags = []; // 这里必须初始化pags数组
-                    this.numPag = (+this.leng) % (+this.pagNum) === 0 ? (+this.leng) / (+this.pagNum) : Math.floor((+this.leng) / (+this.pagNum)) + 1;
-                    for (var i = 1; i <= this.numPag; i++) {
-                        this.pags.push(i);
-                    }
-                    console.log('change,, ' + this.leng + ',,' + this.pags.length);
-                };
-                // 当分页组件中的下拉数据数量发生变化，需要重新改变页码，调用
-                PageComponent.prototype.ngDoCheck = function () {
-                    if (this.pagNum !== this.oldPagNum) {
-                        this.pagCurren = 1;
-                        this.currentPag.emit(this.pagCurren);
-                        this.pagNums.emit(this.pagNum);
-                        this.oldPagNum = this.pagNum;
-                        console.log('check,, ' + this.leng + ',,' + this.pags.length);
-                    }
-                };
-                // 获取每页显示数量函数,下拉菜单用
-                PageComponent.prototype.gitPagNum = function () {
-                    this.pags = []; // 这里必须初始化pags数组
-                    this.numPag = (+this.leng) % (+this.pagNum) === 0 ? (+this.leng) / (+this.pagNum) : Math.floor((+this.leng) / (+this.pagNum)) + 1;
-                    for (var i = 1; i <= this.numPag; i++) {
-                        this.pags.push(i);
-                    }
-                };
-                // 获取当前显示页函数，特殊显示
-                PageComponent.prototype.gitPag = function (pag) {
-                    this.pagCurren = pag;
-                    this.currentPag.emit(this.pagCurren);
-                    this.pagNums.emit(this.pagNum);
-                };
-                // 显示下一页函数
-                PageComponent.prototype.next = function () {
-                    if (this.pagCurren !== this.pags[this.pags.length - 1]) {
-                        this.pagCurren = this.pagCurren + 1;
-                    }
-                    else {
-                        this.pagCurren = this.pags[this.pags.length - 1];
-                    }
-                    this.currentPag.emit(this.pagCurren);
-                    this.pagNums.emit(this.pagNum);
-                };
-                // 显示上一页函数
-                PageComponent.prototype.previous = function () {
-                    if (this.pagCurren !== 1) {
-                        this.pagCurren = this.pagCurren - 1;
-                    }
-                    else {
-                        this.pagCurren = 1;
-                    }
-                    this.currentPag.emit(this.pagCurren);
-                    this.pagNums.emit(this.pagNum);
-                };
-                return PageComponent;
-            }());
-            tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-                Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
-            ], PageComponent.prototype, "leng", void 0);
-            tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-                Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])()
-            ], PageComponent.prototype, "currentPag", void 0);
-            tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-                Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])()
-            ], PageComponent.prototype, "pagNums", void 0);
-            PageComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-                Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-                    selector: 'app-page',
-                    template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./page.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/page/page.component.html")).default,
-                    styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./page.component.css */ "./src/app/page/page.component.css")).default]
-                })
-            ], PageComponent);
-            /***/ 
-        }),
         /***/ "./src/app/proftitle/add-title.component.css": 
         /*!***************************************************!*\
           !*** ./src/app/proftitle/add-title.component.css ***!
@@ -1662,20 +1415,46 @@
             /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
             /* harmony import */ var _university_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../university.service */ "./src/app/university.service.ts");
             var AddTeacherComponent = /** @class */ (function () {
-                function AddTeacherComponent(route, departmentService, teacherService, location) {
+                function AddTeacherComponent(route, teacherService, location) {
                     this.route = route;
-                    this.departmentService = departmentService;
                     this.teacherService = teacherService;
                     this.location = location;
                 }
-                AddTeacherComponent.prototype.ngOnInit = function () { this.getDepartments(); };
+                AddTeacherComponent.prototype.ngOnInit = function () {
+                    this.getDepartments();
+                    this.getDegrees();
+                    this.getTitles();
+                    this.getSchools();
+                };
+                AddTeacherComponent.prototype.getDepSch = function (id) {
+                    var _this = this;
+                    this.teacherService.getDepSch(id).subscribe(function (res) { return _this.departments = res; });
+                };
+                AddTeacherComponent.prototype.getSchools = function () {
+                    var _this = this;
+                    this.teacherService.getColleges()
+                        .subscribe(function (res) { return _this.schools = res; });
+                };
                 AddTeacherComponent.prototype.getDepartments = function () {
                     var _this = this;
-                    this.departmentService.getDepartments()
+                    this.teacherService.getDepartments()
                         .subscribe(function (res) { return _this.departments = res; });
+                };
+                AddTeacherComponent.prototype.getDegrees = function () {
+                    var _this = this;
+                    this.teacherService.getDegrees()
+                        .subscribe(function (res) { return _this.degrees = res; });
+                };
+                AddTeacherComponent.prototype.getTitles = function () {
+                    var _this = this;
+                    this.teacherService.getTitles()
+                        .subscribe(function (res) { return _this.titles = res; });
                 };
                 AddTeacherComponent.prototype.save = function (name, department, title, degree) {
                     var _this = this;
+                    this.department = department;
+                    this.title = title;
+                    this.degree = degree; // 多个文本框数据
                     // @ts-ignore
                     // tslint:disable-next-line:max-line-length
                     this.teacher = { name: name.trim(), department: this.department, title: this.title, degree: this.degree };
@@ -1693,7 +1472,6 @@
             AddTeacherComponent.ctorParameters = function () { return [
                 { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"] },
                 { type: _university_service__WEBPACK_IMPORTED_MODULE_4__["UniversityService"] },
-                { type: _university_service__WEBPACK_IMPORTED_MODULE_4__["UniversityService"] },
                 { type: _angular_common__WEBPACK_IMPORTED_MODULE_3__["Location"] }
             ]; };
             tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -1708,6 +1486,9 @@
             tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
                 Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
             ], AddTeacherComponent.prototype, "teacher", void 0);
+            tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+                Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+            ], AddTeacherComponent.prototype, "schools", void 0);
             AddTeacherComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
                 Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
                     selector: 'app-add-teacher',
@@ -1793,13 +1574,28 @@
                     this.getDepartments(); // 下拉菜单赋值
                     this.getDegrees();
                     this.getTitles();
+                    this.getSchools();
                     var id = this.route.snapshot.params.id; // 要修改专业的id
                     this.teacherService.getTeacher(id)
                         .subscribe(function (res) {
                         _this.teacher = res;
                     });
                 };
+                UpdateTeacherComponent.prototype.getDepSch = function (id) {
+                    var _this = this;
+                    this.teacherService.getDepSch(id).subscribe(function (res) { return _this.departments = res; });
+                };
                 // @ts-ignore
+                UpdateTeacherComponent.prototype.compareFn = function (o1, o2) {
+                    return o1 && o2 ? o1.id === o2.id : o1 === o2;
+                };
+                UpdateTeacherComponent.prototype.getSchools = function () {
+                    var _this = this;
+                    this.teacherService.getColleges()
+                        .subscribe(function (res) { return _this.schools = res; });
+                };
+                // @ts-ignore
+                // tslint:disable-next-line:adjacent-overload-signatures
                 UpdateTeacherComponent.prototype.compareFn = function (o1, o2) {
                     return o1 && o2 ? o1.id === o2.id : o1 === o2;
                 };
@@ -1858,6 +1654,9 @@
             tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
                 Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
             ], UpdateTeacherComponent.prototype, "titles", void 0);
+            tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+                Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+            ], UpdateTeacherComponent.prototype, "schools", void 0);
             UpdateTeacherComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
                 Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
                     selector: 'app-update-teacher',
@@ -1880,19 +1679,26 @@
             /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
             /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
             /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
+            // service类用来处理数据，获取数据，与后台进行交互 ng g service school
+            // 实现Http通信(get/post/put/delete)
+            // 监听来自后台的数据
+            // 异常处理
+            // 中间传输的选项数据（http传输，json格式）
             var httpOptions = {
                 headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({ 'Content-Type': 'application/json' })
             };
             var UniversityService = /** @class */ (function () {
+                // 接口，获取后端所提供的数据
                 function UniversityService(http) {
                     this.http = http;
-                    this.collegeUrl = '../school.ctl'; // 自己机器上的servlet
+                    this.collegeUrl = '../school.ctl'; // 后台servlet中映射的url
                     this.depUrl = '../department.ctl';
                     this.teacherUrl = '../teacher.ctl';
                     this.degreeUrl = '../degree.ctl';
                     this.titleUrl = '../profTitle.ctl';
                 }
-                /** GET heroes from the server */
+                /** GET schools from the server */
+                // College类型的json数组（school组件调用）
                 UniversityService.prototype.getColleges = function () {
                     return this.http.get(this.collegeUrl)
                         .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.handleError('getColleges', [])));
@@ -1904,10 +1710,6 @@
                 UniversityService.prototype.getTitles = function () {
                     return this.http.get(this.titleUrl)
                         .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.handleError('getTitles', [])));
-                };
-                UniversityService.prototype.getDepSch = function (id) {
-                    var url = this.depUrl + '?paraType=school&id=' + id;
-                    return this.http.get(url).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.handleError("getDepSch schoolid=" + id)));
                 };
                 UniversityService.prototype.getDepartments = function () {
                     return this.http.get(this.depUrl).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.handleError('getDepartments', [])));
@@ -1972,6 +1774,10 @@
                 UniversityService.prototype.getTeacher = function (id) {
                     var url = this.teacherUrl + '?id=' + id;
                     return this.http.get(url).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.handleError("getTeacher id=" + id)));
+                };
+                UniversityService.prototype.getDepSch = function (id) {
+                    var url = this.depUrl + '?paraType=school&id=' + id;
+                    return this.http.get(url).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.handleError("getDepSch schoolId=" + id)));
                 };
                 UniversityService.prototype.updateCollege = function (college) {
                     return this.http.put(this.collegeUrl, college, httpOptions).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.handleError('updateCollege')));

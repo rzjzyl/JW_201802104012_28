@@ -6,7 +6,31 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5c15cc5-063a-4a68-b4e5-082123fdbd68" name="Default Changelist" comment="" />
+    <list default="true" id="d5c15cc5-063a-4a68-b4e5-082123fdbd68" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/web/rzjapp/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/rzjapp/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/rzjapp/main-es2015.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/rzjapp/main-es2015.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/rzjapp/main-es5.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/rzjapp/main-es5.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/rzjapp/polyfills-es2015.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/rzjapp/polyfills-es2015.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/rzjapp/polyfills-es5.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/rzjapp/polyfills-es5.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/rzjapp/runtime-es2015.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/rzjapp/runtime-es2015.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/rzjapp/runtime-es5.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/rzjapp/runtime-es5.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/rzjapp/styles-es2015.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/rzjapp/styles-es2015.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/rzjapp/styles-es5.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/rzjapp/styles-es5.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/rzjapp/vendor-es2015.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/rzjapp/vendor-es2015.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/rzjapp/vendor-es5.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/rzjapp/vendor-es5.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +63,17 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="D:\workspace\JW_201802104012_28\.idea" />
+      </set>
+    </option>
+  </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
     <option name="FILTER_WARNINGS" value="false" />
@@ -47,11 +82,13 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectId" id="1TbwIeRXXUva4P1Hl4syFmeNaq5" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/web" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -63,6 +100,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -73,11 +111,11 @@
       <recent name="cn.edu.sdjzu.xg.bysj.domain" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\workspace\JW_201802104012_28\out\artifacts\JW_201802104012_22_war_exploded\js" />
+      <recent name="D:\workspace\JW_201802104012_28\web" />
       <recent name="D:\workspace\JW_201802104012_27\web" />
       <recent name="D:\workspace\JW_201802104012_25\src\filter" />
       <recent name="D:\workspace\JW_201802104012_25\web" />
-      <recent name="D:\workspace\JW_201802104012_24\web" />
-      <recent name="D:\workspace\JW_201802104012_22" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -221,11 +259,42 @@
       <workItem from="1574675070427" duration="6310000" />
       <workItem from="1574778064341" duration="448000" />
       <workItem from="1574780283842" duration="787000" />
-      <workItem from="1574843639896" duration="459000" />
+      <workItem from="1574843639896" duration="7201000" />
+      <workItem from="1574955274880" duration="371000" />
     </task>
+    <task id="LOCAL-00001" summary="第一次提交到本地仓库">
+      <created>1574862692138</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1574862692138</updated>
+    </task>
+    <task id="LOCAL-00002" summary="第一次提交到本地仓库">
+      <created>1574862888507</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1574862888507</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="第一次提交到本地仓库" />
+    <option name="LAST_COMMIT_MESSAGE" value="第一次提交到本地仓库" />
   </component>
 </project>
